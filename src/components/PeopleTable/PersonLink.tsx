@@ -1,11 +1,4 @@
-// import classNames from 'classnames';
-// import { NavLink, useLocation } from 'react-router-dom';
-// import { Person } from '../../types';
 
-// type Props = {
-//   person: Person;
-//   people: Person[];
-// };
 
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
@@ -19,20 +12,27 @@ export const PersonLink = ({ person }: Props) => {
   if (!person) {
     return <span>-</span>;
   }
+
   return (
     <NavLink
       to={`/people/${person.slug}`}
-      className={classNames({ 'has-text-danger': person.sex === 'f' },
-
-      )}
+      className={classNames({ 'has-text-danger': person.sex === 'f' })}
     >
       {person.name}
     </NavLink>
   );
 };
 
-// export const PersonLink = ({ person, people }: Props) => {
+// import classNames from 'classnames';
+// import { NavLink, useLocation } from 'react-router-dom';
+// import { Person } from '../../types';
 
+// type Props = {
+//   person: Person;
+//   people: Person[];
+// };
+
+// export const PersonLink = ({ person, people }: Props) => {
 
 //   const getParentElement = (parentName: string) => {
 //     const parent = people.find(p => p.name === parentName);
